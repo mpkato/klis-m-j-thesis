@@ -1,0 +1,60 @@
+\usepackage[a4paper]{geometry}
+
+\makeatletter
+\newcommand{\etitle}[1]{\def\@etitle{#1}}
+\newcommand{\eauthor}[1]{\def\@eauthor{#1}}
+\newcommand{\gradyear}[1]{\def\@gradyear{#1}}
+\newcommand{\gradmonth}[1]{\def\@gradmonth{#1}}
+\newcommand{\affiliation}[1]{\def\@affiliation{#1}}
+\newcommand{\supervisor}[1]{\def\@supervisor{#1}}
+\newcommand{\subsupervisor}[1]{\def\@subsupervisor{#1}}
+\renewcommand{\maketitle}{
+    \begin{titlepage}
+      \newgeometry{left=30truemm,right=30truemm,top=30truemm,bottom=30truemm}
+      \let\footnotesize\small
+      \let\footnoterule\relax
+      \let\footnote\thanks
+      \vskip 60\jsc@mpt
+      \begin{center}
+        \null\vfil
+        {\fontsize{20truept}{28truept}\selectfont \textgt{\@title} \par}
+        \vskip 20em
+        {\fontsize{16truept}{24truept}\selectfont \@affiliation \par}
+        \vskip 0.5em
+        {\fontsize{16truept}{24truept}\selectfont \@gradyear 年 \@gradmonth 月 \par}
+        \vskip 0.5em
+        {\fontsize{16truept}{24truept}\selectfont \@author \par}
+        \vskip 2em
+      \end{center}
+    \end{titlepage}
+  }%
+  
+\newenvironment{abst}
+{% begin code
+    \thispagestyle{empty}
+    \begin{titlepage}
+      \newgeometry{left=30truemm,right=30truemm,top=35truemm,bottom=35truemm}
+      \let\footnotesize\small
+      \let\footnoterule\relax
+      \let\footnote\thanks
+      \vskip 60\jsc@mpt
+      \begin{center}
+        \fontsize{14truept}{20truept}\selectfont
+        \textgt{\@title} \par
+        \textgt{\@etitle} \par
+        \vskip 20truept
+      \end{center}
+      \fontsize{10.5truept}{16truept}\selectfont
+      {\raggedleft 氏名： \@author \par}
+      {\raggedleft \@eauthor \par}
+        \vskip 20truept
+      \par
+}%
+{% end code
+        \vskip 20truept
+    {\raggedleft
+      \par 主研究指導教員： \@supervisor \par
+      \par 副研究指導教員： \@subsupervisor \par      
+    }
+  \end{titlepage}
+}

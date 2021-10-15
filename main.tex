@@ -1,0 +1,58 @@
+\documentclass[a4paper,12pt,oneside,openany,xelatex,ja=standard,jafont=noto]{bxjsbook}
+%
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{klismj} % 卒業論文フォーマット
+%
+\title{筑波大学大学院 人間総合科学学術院 人間総合科学研究群 情報学学位プログラムにおける博士前期課程 学位論文執筆方法について}
+\etitle{Master Thesis Writing Methodology in Master's Program in Informatics, Graduate School of Comprehensive Human Sciences, University of Tsukuba}
+\author{筑波　花子} % 自分の氏名．姓名の間は【全角】スペース（TWINS 登録の表記と合わせる）
+\eauthor{Makoto Kato} % 自分の氏名．姓名の間は【半角】スペース（TWINS 登録の表記と合わせる）
+\affiliation{筑波大学\\ 人間総合科学学術院人間総合科学研究群\\ 情報学学位プログラム}
+\gradyear{２０２１} % 【全角】修了予定年．年度ではない．基本的に卒業論文の翌年となるので注意
+\gradmonth{３} % 【全角】修了予定月．基本的に３月か９月
+\supervisor{加藤　誠} % 主指導教員．姓名の間は全角スペース
+\subsupervisor{筑波　太郎} % 副指導教員．姓名の間は全角スペース
+%
+\begin{document}
+% 「TC:ignore」から「TC:endignore」までは文字カウントが無視される
+%TC:ignore
+%
+\maketitle
+%
+\frontmatter
+%
+% 抄録
+\input{abstract}
+%
+\setcounter{tocdepth}{3}
+\tableofcontents
+\thispagestyle{empty}
+%
+\mainmatter
+%TC:endignore
+%
+% 本文
+\include{section1}
+\include{section2}
+\include{section3}
+\include{section4}
+\include{section5}
+%
+%TC:ignore
+\backmatter
+\pagenumbering{roman}
+%
+% 謝辞
+\include{acknowledgment}
+%
+\cleardoublepage
+\bibliographystyle{sist02}
+% 参考文献
+\bibliography{bibliography}
+%
+%TC:endignore
+\end{document}
